@@ -1,0 +1,24 @@
+{
+  "skills": [
+    {
+      "name": "HTML",
+      "percentage": "99%"
+    },
+    {
+      "name": "CSS",
+      "percentage": "90%"
+    },
+    {
+      "name": "JAVASCRIPT",
+      "percentage": "90%"
+    },
+    {
+      "name": "REACT",
+      "percentage": "0%"
+    },
+    {
+      "name": "NODEJS",
+      "percentage": "90%"
+    }
+  ]
+}
