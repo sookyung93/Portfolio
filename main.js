@@ -30,6 +30,19 @@ function createSkillDescription(skills) {
     `;
 }
 
+function scrollToSection(clickTarget) {
+  clickTarget.addEventListener('click', (event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    if (link == null) {
+      return;
+    }
+
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+  });
+}
+
 loadSkills()
   .then((skills) => {
     displaySkills(skills);
@@ -40,8 +53,6 @@ loadSkills()
 const navbar = document.querySelector('#navbar');
 const narbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
-  console.log('narbarHeight : ', narbarHeight);
   if (window.scrollY > narbarHeight) {
     navbar.classList.add('navbar--dark');
   } else {
@@ -49,18 +60,10 @@ document.addEventListener('scroll', () => {
   }
 });
 
-//Scroll to section
-
+//when clisk the navbar menu, scroll to section
 const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
-  const target = event.target;
-  const link = target.dataset.link;
-  if (link == null) {
-    return;
-  }
-  console.log(link);
+scrollToSection(navbarMenu);
 
-  const scrollTo = document.querySelector(link);
-  console.log(scrollTo);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-});
+//when click the 'contact' btn, scroll to contact section
+const contactBtn = document.querySelector('.home__contact');
+scrollToSection(contactBtn);
