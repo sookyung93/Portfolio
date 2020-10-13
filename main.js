@@ -1,3 +1,5 @@
+'use strict';
+
 function loadSkills() {
   // 데이터를 받아와서, json 안에 있는 items 반환
   return fetch('data/skills.json') //
@@ -13,7 +15,6 @@ function displaySkills(skills) {
 }
 
 function createSkillDescription(skills) {
-  console.log(skills);
   return `
     <div class="skill">
         <div class="skill__description">
@@ -34,3 +35,15 @@ loadSkills()
     displaySkills(skills);
   })
   .catch(console.log);
+
+const navbar = document.querySelector('#navbar');
+const narbarHeight = navbar.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  console.log(window.scrollY);
+  console.log('narbarHeight : ', narbarHeight);
+  if (window.scrollY > narbarHeight) {
+    navbar.classList.add('navbar--dark');
+  } else {
+    navbar.classList.remove('navbar--dark');
+  }
+});
