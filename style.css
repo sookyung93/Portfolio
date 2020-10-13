@@ -95,6 +95,18 @@ li {
   list-style: none;
 }
 
+/* section */
+.section {
+  padding: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* Navbar */
 #navbar {
   display: flex;
@@ -162,18 +174,6 @@ li {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
-}
-
-/* section */
-.section {
-  padding: 50px;
-  text-align: center;
-  margin: auto;
-}
-
-.section__container {
-  max-width: 1200px;
-  margin: auto;
 }
 
 /* about */
