@@ -36,6 +36,7 @@ loadSkills()
   })
   .catch(console.log);
 
+//navbar fix
 const navbar = document.querySelector('#navbar');
 const narbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
@@ -46,4 +47,20 @@ document.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('navbar--dark');
   }
+});
+
+//Scroll to section
+
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event) => {
+  const target = event.target;
+  const link = target.dataset.link;
+  if (link == null) {
+    return;
+  }
+  console.log(link);
+
+  const scrollTo = document.querySelector(link);
+  console.log(scrollTo);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
 });
