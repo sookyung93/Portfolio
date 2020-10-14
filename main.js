@@ -69,3 +69,12 @@ const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', () => {
   scrollToSection('#contact');
 });
+
+//when scrolling, make a home transparent
+const home = document.querySelector('#home');
+const homeHeight = home.getBoundingClientRect().height;
+const homeContainer = document.querySelector('.home__container');
+document.addEventListener('scroll', () => {
+  const opacity = 1 - window.scrollY / homeHeight;
+  homeContainer.style.opacity = opacity;
+});
