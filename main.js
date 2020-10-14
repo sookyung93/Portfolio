@@ -99,12 +99,20 @@ const workBtnContainer = document.querySelector('.work__categories');
 const workContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 workBtnContainer.addEventListener('click', (event) => {
-  const target = event.target;
-  const filter = target.dataset.filter || target.parentNode.dataset.filter;
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
 
   if (filter == null) {
     return;
   }
+
+  const active = document.querySelector('.selected');
+  active.classList.remove('selected');
+
+  const target =
+    event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+
+  target.classList.add('selected');
 
   workContainer.classList.add('animation-out');
 
