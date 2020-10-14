@@ -78,3 +78,18 @@ document.addEventListener('scroll', () => {
   const opacity = 1 - window.scrollY / homeHeight;
   homeContainer.style.opacity = opacity;
 });
+
+// show up arrow up button when scrolling down
+const arrowupBtn = document.querySelector('.arrowup-btn');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowupBtn.classList.add('visible');
+  } else {
+    arrowupBtn.classList.remove('visible');
+  }
+});
+
+// scroll to home when click the "arrow up" button
+arrowupBtn.addEventListener('click', () => {
+  scrollToSection('#home');
+});
