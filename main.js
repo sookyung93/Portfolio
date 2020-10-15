@@ -60,8 +60,14 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
-
+  navbarMenu.classList.remove('toggle__open');
   scrollToSection(link);
+});
+
+//Navbar toggle button for small screen
+const navbarTogglBtn = document.querySelector('.navbar__toggle-btn');
+navbarTogglBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('toggle__open');
 });
 
 //when click the 'contact' btn, scroll to contact section

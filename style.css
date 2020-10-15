@@ -145,9 +145,6 @@ li {
   border: 1px solid transparent;
 }
 
-.navbar__menu__item.active {
-}
-
 .navbar__menu__item:hover {
   border-color: var(--color-white);
   background-color: var(--color-dark-pink);
@@ -156,7 +153,8 @@ li {
 .navbar__toggle-btn {
   position: absolute;
   right: 32px;
-  top: 20px;
+  /* top: 20px; */
+  transform: translateY(5px);
   font-size: 24px;
   color: var(--color-white);
   display: none;
@@ -414,7 +412,7 @@ li {
 }
 
 .project__description h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__description h3:after {
@@ -422,9 +420,9 @@ li {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
-  margin-left: -12px;
+  transform: translateX(-50%);
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
@@ -531,6 +529,11 @@ li {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-pink);
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
   }
 
   .navbar__menu {
@@ -538,6 +541,10 @@ li {
     width: 100%;
     text-align: center;
     display: none;
+  }
+
+  .navbar__menu.toggle__open {
+    display: flex;
   }
 
   .about__majors {
@@ -563,5 +570,9 @@ li {
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .contact__email {
+    font-size: 20px;
   }
 }
