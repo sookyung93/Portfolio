@@ -6,13 +6,16 @@
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
   --color-pink: #fe918d;
-  --color-dark-pink: #ff6863;
+  --color-light-purple: #e4e8f7;
+  --color-medium-purple: #e0c7f6;
+  --color-purple: #b6a9de;
+  --color-dark-purple: #968be0;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
+  --color-dark-skyblue: #cce1fa;
   --color-yellow: #fff7d1;
-  --color-orange: #feb546;
+  --color-orange: #fac8b9;
   --color-black: #000000;
 
   /* Font size */
@@ -98,6 +101,7 @@ li {
 /* section */
 .section {
   padding: 50px;
+  padding-top: 60px;
   text-align: center;
   margin: auto;
 }
@@ -147,7 +151,7 @@ li {
 
 .navbar__menu__item:hover {
   border-color: var(--color-white);
-  background-color: var(--color-dark-pink);
+  background-color: var(--color-dark-purple);
 }
 
 .navbar__toggle-btn {
@@ -161,7 +165,7 @@ li {
 }
 
 #navbar.navbar--dark {
-  background-color: var(--color-pink);
+  background-color: var(--color-purple);
   padding: 8px;
 }
 
@@ -195,6 +199,10 @@ li {
   border-radius: var(--size-border-radius);
 }
 
+.home__contact:hover {
+  background-color: var(--color-orange);
+}
+
 /* about */
 .about__majors {
   display: flex;
@@ -207,9 +215,9 @@ li {
   height: 170px;
   line-height: 170px;
   font-size: 70px;
-  color: var(--color-blue);
+  color: var(--color-dark-skyblue);
   margin: auto;
-  border: 1px solid var(--color-blue);
+  border: 1px solid var(--color-dark-skyblue);
   border-radius: 50%;
   margin-bottom: 16px;
 }
@@ -224,7 +232,7 @@ li {
 }
 
 .major__icon:hover {
-  border-color: var(--color-dark-pink);
+  border-color: var(--color-purple);
 }
 
 .major__icon i {
@@ -232,7 +240,7 @@ li {
 }
 
 .major__icon:hover i {
-  color: var(--color-pink);
+  color: var(--color-purple);
   transform: rotate(-30deg) scale(1.1);
 }
 
@@ -265,7 +273,7 @@ li {
 
 /* Skills */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: var(--color-light-purple);
 }
 
 .skillset {
@@ -306,7 +314,7 @@ li {
 
 .skill__value {
   height: 3px;
-  background-color: var(--color-orange);
+  background-color: var(--color-medium-purple);
 }
 
 .tools {
@@ -328,11 +336,12 @@ li {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
 .category__btn:hover {
-  background-color: var(--color-pink);
+  background-color: var(--color-purple);
   color: var(--color-white);
 }
 
@@ -351,9 +360,9 @@ li {
   height: 24px;
   display: inline-block;
   line-height: 24px;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease;
 }
@@ -470,12 +479,12 @@ li {
 }
 
 .testimonial__speech-bubble a {
-  color: var(--color-pink);
+  color: var(--color-purple);
 }
 
 /* Contact */
 #contact {
-  background-color: var(--color-pink);
+  background-color: var(--color-purple);
 }
 
 .contact__title,
@@ -507,9 +516,11 @@ li {
   width: 70px;
   height: 70px;
   color: var(--color-white);
-  background-color: var(--color-pink);
+  background-color: var(--color-purple);
   font-size: 50px;
+  line-height: 70px;
   border-radius: 50%;
+  border: 1px solid var(--color-light-purple);
   opacity: 0;
   pointer-events: none;
   transition: opacity 300ms ease-in;
@@ -522,6 +533,21 @@ li {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .section {
+    padding: 16px;
+    text-align: center;
+    margin: auto;
+  }
+
   .navbar__toggle-btn {
     display: block;
   }
@@ -529,7 +555,7 @@ li {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-pink);
+    background-color: var(--color-purple);
   }
 
   #navbar.navbar--dark {
