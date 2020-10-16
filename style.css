@@ -135,6 +135,7 @@ li {
 .navbar__logo__img {
   height: var(--font-medium);
   width: var(--font-medium);
+  margin-right: 4px;
 }
 
 .navbar__menu {
@@ -156,9 +157,8 @@ li {
 
 .navbar__toggle-btn {
   position: absolute;
-  right: 32px;
-  /* top: 20px; */
-  transform: translateY(5px);
+  right: 16px;
+  top: 15px;
   font-size: 24px;
   color: var(--color-white);
   display: none;
@@ -516,11 +516,10 @@ li {
   width: 70px;
   height: 70px;
   color: var(--color-white);
-  background-color: var(--color-purple);
+  background-color: var(--color-dark-skyblue);
   font-size: 50px;
   line-height: 70px;
   border-radius: 50%;
-  border: 1px solid var(--color-light-purple);
   opacity: 0;
   pointer-events: none;
   transition: opacity 300ms ease-in;
@@ -531,8 +530,8 @@ li {
   pointer-events: auto;
 }
 
-/* For below 768px screen width */
-@media screen and (max-width: 768px) {
+/* For below 1024px screen width (pad)*/
+@media screen and (max-width: 1023px) {
   :root {
     /* Font size */
     --font-large: 30px;
@@ -542,11 +541,11 @@ li {
     --font-micro: 12px;
   }
 
-  .section {
+  /* .section {
     padding: 16px;
     text-align: center;
     margin: auto;
-  }
+  } */
 
   .navbar__toggle-btn {
     display: block;
@@ -573,12 +572,17 @@ li {
     display: flex;
   }
 
-  .about__majors {
+  /* .about__majors {
     flex-direction: column;
-  }
+    margin: 20px 0;
+  } */
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 12px;
+  }
+
+  .major:last-child {
+    margin-bottom: 0px;
   }
 
   .skillset {
@@ -590,7 +594,7 @@ li {
   }
 
   .project {
-    flex-grow: 1;
+    /* flex-grow: 1; */
   }
 
   .testimonial__avatar {
@@ -598,7 +602,65 @@ li {
     height: 80px;
   }
 
-  .contact__email {
-    font-size: 20px;
+  .arrowup-btn {
+    right: 24px;
+    bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 16px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .about__majors {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .work__categories {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category__btn {
+    width: 240px;
+  }
+
+  .category__count {
+    right: 50px;
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial__avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0px;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrowup-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
