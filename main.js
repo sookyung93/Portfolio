@@ -17,11 +17,16 @@ document.addEventListener('scroll', () => {
   }
 });
 
-//when clisk the navbar menu, scroll to section
+//when clisk the navbar menu, scroll to section & add btn-active class
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
+  const preSelectedBtn = document.querySelector('.btn-active');
+  if (preSelectedBtn) {
+    preSelectedBtn.classList.remove('btn-active');
+  }
   const target = event.target;
   const link = target.dataset.link;
+  target.classList.add('btn-active');
   if (link == null) {
     return;
   }
@@ -135,8 +140,6 @@ function scrollToSection(selector) {
   if (selector === '#home' || selector === '#contact') {
     scrollTo.scrollIntoView({ behavior: 'smooth' });
   } else {
-    console.log(`selector:${selector}`);
-    console.log(scrollTo.offsetTop);
     window.scrollTo({
       top: scrollTo.offsetTop - navbarHeight,
       behavior: 'smooth',

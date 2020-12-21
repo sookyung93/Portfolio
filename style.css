@@ -120,7 +120,7 @@ li {
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
-  padding: 16px;
+  padding: 8px 16px;
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
 }
@@ -155,6 +155,11 @@ li {
   background-color: var(--color-dark-purple);
 }
 
+.btn-active {
+  border-color: var(--color-white);
+  background-color: var(--color-dark-purple);
+}
+
 .navbar__toggle-btn {
   position: absolute;
   right: 16px;
@@ -166,7 +171,7 @@ li {
 
 #navbar.navbar--dark {
   background-color: var(--color-purple);
-  padding: 8px;
+  padding: 8px 16px;
 }
 
 /* Home */
